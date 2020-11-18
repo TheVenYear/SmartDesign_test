@@ -4,8 +4,8 @@
 - Запустить команду: pip install -r req.txt
 - Запустить сервер с mongodb: docker run -d -p 27017:27017 mongo
 - Запустить миграции Django: python manage.py migrate
+- Запустить сам Django: python manage.py runserver
 ## Curl запросы:
-
 ### Создание 1 товара:
 Запрос:
 ```
