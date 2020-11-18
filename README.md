@@ -13,19 +13,33 @@ curl --location --request POST 'http://127.0.0.1:8000/api/v1/products/' \
 --data-raw '{
     "params": [
         {
-            "key": "Категория",
-            "value": "Телефоны"
+            "key": "{ключ}",
+            "value": "{значение}"
         },
         {
-            "key": "Производитель",
-            "value": "Xiaomi"
+            "key": "{ключ}",
+            "value": "{значение}"
         }
     ],
-    "name": "Телефон Xiaomi Redmi note 22",
-    "description": "Превосходный аппарат, произведённый где-то в Китае"
+    "name": "{название}",
+    "description": "{описание}"
 }'
-
+```
 ### Вывод всех товаров:
 ```
 curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/'
+```
+### Вывод конкретного товара:
+```
+curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/{id товара}'
+```
+### Вывод отфильтрованного товара:
+Query параметры:
+- name
+- key
+- value
+
+Пример:
+```
+curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/?key={ключ}&value={значенте}&name={название}'
 ```
