@@ -67,7 +67,7 @@ curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/'
 Ответ с сервера:
 ```json
 {
-    "id": 1,
+    "id": 2,
     "params": [
         {
             "key": "Категория",
@@ -110,7 +110,7 @@ curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/'
 Ответ с сервера:
 ```json
 {
-    "id": 1,
+    "id": 3,
     "params": [
         {
             "key": "Категория",
