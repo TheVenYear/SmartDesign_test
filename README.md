@@ -25,3 +25,22 @@ curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/'
     "description": "Превосходный аппарат, произведённый где-то в Китае"
 }'
 ```
+Ответ с сервера:
+```json
+{
+    "id": 7,
+    "params": [
+        {
+            "key": "Категория",
+            "value": "Телефоны"
+        },
+        {
+            "key": "Производитель",
+            "value": "Xiaomi"
+        }
+    ],
+    "name": "Телефон Xiaomi Redmi note 22",
+    "description": "Превосходный аппарат, произведённый где-то в Китае"
+}
+```
+
