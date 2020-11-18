@@ -11,18 +11,21 @@ class ProductsViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         qp = self.request.query_params
+        name = qp.get('name', None)
+        key = qp.get('key', None)
+        value = qp.get('value', None)
+        products = Product.objects.all()
 
-        if 'value' in qp.keys() and 'key' in qp.keys():
-            values = Product.objects.filter(params__key=qp['key'], params__value=qp['value'])
-            return values
+        if key is not None:
+            products = products.filter(params__key=key)
 
-        if 'key' in qp.keys():
-            return Product.objects.filter(params__key=qp['key'])
+        if name is not None:
+            products = products.filter(name=name)
 
-        if 'value' in qp.values():
-            return Product.objects.filter(params__value=qp['value'])
+        if value is not None:
+            products = products.filter(params__value=value)
 
-        return Product.objects.all()
+        return products
 
     def get_serializer_class(self):
         if self.action is 'list':
