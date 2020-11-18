@@ -14,7 +14,7 @@ class ProductsViewSet(viewsets.ModelViewSet):
         name = params.get('name', None)
         key = params.get('key', None)
         value = params.get('value', None)
-        products = Product.objects.all()
+        products = Product.objects.all().distinct()
 
         if key is not None:
             products = products.filter(params__key=key)
