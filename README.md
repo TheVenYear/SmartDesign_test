@@ -7,6 +7,12 @@
 - Запустить сам Django: python manage.py runserver
 ## Curl запросы:
 ### Создание товара:
+Параметры:
+- name;
+- description;
+- params(пара{key, value}).
+
+Пример:
 ```
 curl --location --request POST 'http://127.0.0.1:8000/api/v1/products/' \
 --header 'Content-Type: application/json' \
@@ -34,12 +40,19 @@ curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/'
 curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/{id товара}'
 ```
 ### Вывод отфильтрованного товара:
-Query параметры:
-- name
-- key
-- value
+Параметры:
+- name;
+- key;
+- value.
 
 Пример:
 ```
-curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/?key={ключ}&value={значенте}&name={название}'
+curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "{название}",
+    "key": "{ключ}",
+    "value": "{значение}"
+}'
 ```
+Примечание: неважно наличие всех параметров
