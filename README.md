@@ -34,12 +34,19 @@ curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/'
 curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/{id товара}'
 ```
 ### Вывод отфильтрованного товара:
-Query параметры:
+Параметры:
 - name
 - key
 - value
 
 Пример:
 ```
-curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/?key={ключ}&value={значенте}&name={название}'
+curl --location --request GET 'http://127.0.0.1:8000/api/v1/products/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "{название}",
+    "key": "{ключ}",
+    "value": "{значение}"
+}'
 ```
+Примечание: неважно наличие всех параметров
