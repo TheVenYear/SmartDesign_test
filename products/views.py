@@ -10,10 +10,10 @@ class ProductsViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
 
     def get_queryset(self):
-        qp = self.request.query_params
-        name = qp.get('name', None)
-        key = qp.get('key', None)
-        value = qp.get('value', None)
+        params = self.request.data
+        name = params.get('name', None)
+        key = params.get('key', None)
+        value = params.get('value', None)
         products = Product.objects.all()
 
         if key is not None:
