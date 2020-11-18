@@ -14,4 +14,3 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [
         ParameterInline,
     ]
-

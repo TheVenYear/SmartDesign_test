@@ -19,7 +19,7 @@ class Parameter(models.Model):
     product = models.ForeignKey(to=Product, related_name='params', verbose_name='продукт', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.key
+        return f'Параметр №{self.id}'
 
     class Meta:
         verbose_name = 'параметр'
