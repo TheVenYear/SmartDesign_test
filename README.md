@@ -6,7 +6,7 @@
 - Запустить миграции Django: python manage.py migrate
 ## Curl запросы:
 
-###Создание 1 товара:
+### Создание 1 товара:
 ```
 curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/' \
 --header 'Content-Type: application/json' \
