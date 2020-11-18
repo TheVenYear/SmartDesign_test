@@ -7,6 +7,7 @@
 ## Curl запросы:
 
 ### Создание 1 товара:
+Запрос:
 ```
 curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/' \
 --header 'Content-Type: application/json' \
@@ -28,7 +29,7 @@ curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/'
 Ответ с сервера:
 ```json
 {
-    "id": 7,
+    "id": 1,
     "params": [
         {
             "key": "Категория",
@@ -41,6 +42,88 @@ curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/'
     ],
     "name": "Телефон Xiaomi Redmi note 22",
     "description": "Превосходный аппарат, произведённый где-то в Китае"
+}
+```
+### Создание 2 товара:
+Запрос:
+```
+curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "params": [
+        {
+            "key": "Категория",
+            "value": "Телефоны"
+        },
+        {
+            "key": "Производитель",
+            "value": "Apple"
+        }
+    ],
+    "name": "Телефон Apple IPhone 13",
+    "description": "Превосходный аппарат, произведённый где-то в Китае(разработанный в Америке)"
+}'
+```
+Ответ с сервера:
+```json
+{
+    "id": 1,
+    "params": [
+        {
+            "key": "Категория",
+            "value": "Телефоны"
+        },
+        {
+            "key": "Производитель",
+            "value": "Apple"
+        }
+    ],
+    "name": "Телефон Apple IPhone 13",
+    "description": "Превосходный аппарат, произведённый где-то в Китае(разработанный в Америке)"
+}
+```
+### Создание 3 товара:
+Запрос:
+```
+curl --silent --location --request POST 'http://127.0.0.1:8000/api/v1/products/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "params": [
+        {
+            "key": "Категория",
+            "value": "Стиральные машинки"
+        },
+        {
+            "key": "Производитель",
+            "value": "Bosch"
+        },
+        {
+            "key": "Барабан",
+            "value": "есть"
+        }
+    ],
+    "name": "Крутая стиральная машинка",
+    "description": "
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla               pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+}'
+```
+Ответ с сервера:
+```json
+{
+    "id": 1,
+    "params": [
+        {
+            "key": "Категория",
+            "value": "Стиральные машинки"
+        },
+        {
+            "key": "Производитель",
+            "value": "Bosch"
+        }
+    ],
+    "name": "Крутая стиральная машинка",
+    "description": "
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla               pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }
 ```
 
