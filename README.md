@@ -1,1 +1,2 @@
 # SmartDesign_test
+### Установка
